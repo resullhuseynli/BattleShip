@@ -19,12 +19,18 @@ public class Main {
 
         GameOcean.MakeTheOcean();     //Make The Ocean With Ships
 
-        while(PlayerShips>0 || GameShips>0) {
+        while(PlayerShips>0 && GameShips>0) {
             System.out.println();
             System.out.println("it is Your Turn...");
             AttackTheShips.AttackGameShips();
-            System.out.println("It Is The Game Turn...");
-            AttackTheShips.AttackPlayerShips();
+            System.out.println();
+            if (PlayerShips>0) {
+                System.out.println("It Is The Game Turn...");
+                AttackTheShips.AttackPlayerShips();
+            } else {
+                GameOcean.MakeTheOcean();
+                break ;
+            }
             GameOcean.MakeTheOcean();
         }
 
