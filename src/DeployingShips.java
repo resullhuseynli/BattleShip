@@ -1,10 +1,11 @@
 import java.util.Objects;
 
 public class DeployingShips {
-     ;
+    private static int TempPlayerShips = Main.PlayerShips ;
+    private static int TempGameShips = Main.GameShips ;
     public static void PlayerShips() {
         System.out.println();
-        while(Main.PlayerShips>0) {
+        while(TempPlayerShips>0) {
             System.out.println();
             System.out.print("Please Enter A Row Of The Ship...");
             int InputRow = Main.scanner.nextInt() ;
@@ -26,10 +27,22 @@ public class DeployingShips {
             }
             if (Objects.equals(Main.MyShips[InputRow][InputColumn], " ")) {
                 Main.MyShips[InputRow][InputColumn] = "#" ;
-                Main.PlayerShips-- ;
+                TempPlayerShips-- ;
             } else {
                 System.out.println("Cannot Deploy Two Ships In One Place!!!");
             }
         }
+    }
+
+    public static void GameShips() {
+        while (TempGameShips>0) {
+            int GameRandomRow = (int) (Math.random()*10) ;
+            int GameRandomColumn = (int) (Math.random()*10) ;
+            if (Objects.equals(Main.MyShips[GameRandomRow][GameRandomColumn], " ")) {
+                Main.MyShips[GameRandomRow][GameRandomColumn] = "-" ;
+                TempGameShips-- ;
+            }
+        }
+        System.out.println("All Ships Are Deployed!!!");
     }
 }

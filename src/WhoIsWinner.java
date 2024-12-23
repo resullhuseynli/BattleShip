@@ -1,0 +1,11 @@
+public class WhoIsWinner {
+    public static void Winner() {
+        if (Main.PlayerShips==0) {
+            System.out.println("You Lost All Yout Ships!!!");
+            System.out.println("Game Over...");
+        } else if (Main.GameShips==0) {
+            System.out.println("You Sunk All Enemy Ships!!!");
+            System.out.println();
+        }
+    }
+}
