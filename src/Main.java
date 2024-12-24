@@ -18,19 +18,22 @@ public class Main {
         DeployingShips.GameShips();   //Deploying Game Ships Into The Ocean
 
         GameOcean.MakeTheOcean();     //Make The Ocean With Ships
+        System.out.println();
+        System.out.println();
+        System.out.println("Your Ships Are |#|");
 
         while(PlayerShips>0 && GameShips>0) {
             System.out.println();
             System.out.println("it is Your Turn...");
             AttackTheShips.AttackGameShips();
-            System.out.println();
-            if (PlayerShips>0) {
-                System.out.println("It Is The Game Turn...");
-                AttackTheShips.AttackPlayerShips();
-            } else {
+            if (Main.PlayerShips==0) {
                 GameOcean.MakeTheOcean();
                 break ;
             }
+            System.out.println();
+            System.out.print("It Is The Game Turn...");
+            System.out.println();
+            AttackTheShips.AttackPlayerShips();
             GameOcean.MakeTheOcean();
         }
 

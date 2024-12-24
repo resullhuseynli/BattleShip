@@ -43,6 +43,7 @@ public class DeployingShips {
                 TempGameShips-- ;
             }
         }
+        System.out.println();
         System.out.println("All Ships Are Deployed!!!");
     }
 }

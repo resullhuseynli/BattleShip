@@ -39,7 +39,7 @@ public class AttackTheShips {
             System.out.println("You Sunk The Enemy Ship!!!");
             Main.GameShips-- ;
             Main.MyShips[MyTargetRow][MyTargetColumn] = "!" ;
-        } else {
+        } else if (Objects.equals(Main.MyShips[MyTargetRow][MyTargetColumn], "#")){
             System.out.println("Ohh no! You Sunk Your Ship. Be Careful!!!");
             Main.PlayerShips-- ;
             Main.MyShips[MyTargetRow][MyTargetColumn] = "@" ;
@@ -50,21 +50,27 @@ public class AttackTheShips {
         int RandomTargetRow = (int) (Math.random()*10) ;
         int RandomTargetColumn = (int) (Math.random()*10) ;
 
-        if (Objects.equals(Main.MyShips[RandomTargetRow][RandomTargetColumn], "X") || Objects.equals(Main.MyShips[RandomTargetRow][RandomTargetColumn], "@")) {
-            AttackGameShips();
+        if (Objects.equals(Main.MyShips[RandomTargetRow][RandomTargetColumn], "X") || Objects.equals(Main.MyShips[RandomTargetRow][RandomTargetColumn], "@") || Objects.equals(Main.MyShips[RandomTargetRow][RandomTargetColumn], "!")) {
+            AttackPlayerShips();
         }
         if (Objects.equals(Main.MyShips[RandomTargetRow][RandomTargetColumn], "-")) {
             System.out.println("Ura! Game Sunk His Own Ship!!!");
             Main.GameShips-- ;
             Main.MyShips[RandomTargetRow][RandomTargetColumn] = "!" ;
+            System.out.println();
+            System.out.printf("Target was %d:%d" , RandomTargetRow , RandomTargetColumn);
         } else if (Objects.equals(Main.MyShips[RandomTargetRow][RandomTargetColumn], "#")) {
             System.out.println("Game Find Your Ship!!!");
-            System.out.println(("Ship Was Lost..."));
+            System.out.println(("Ship Lost..."));
             Main.PlayerShips-- ;
             Main.MyShips[RandomTargetRow][RandomTargetColumn] = "@" ;
-        } else {
+            System.out.println();
+            System.out.printf("Target was %d:%d" , RandomTargetRow , RandomTargetColumn);
+        } else if (Objects.equals(Main.MyShips[RandomTargetRow][RandomTargetColumn], " ")) {
             System.out.println("Game Missed!!!");
             Main.MyShips[RandomTargetRow][RandomTargetColumn] = "X" ;
+            System.out.println();
+            System.out.printf("Target was %d:%d" , RandomTargetRow , RandomTargetColumn);
         }
     }
 }
