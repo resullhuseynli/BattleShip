@@ -33,7 +33,6 @@ public class AttackTheShips {
 
         if (Objects.equals(Main.MyShips[MyTargetRow][MyTargetColumn], " ")) {
             System.out.println("You Missed!!!");
-            System.out.println("It Is The Game Turn...");
             Main.MyShips[MyTargetRow][MyTargetColumn] = "X" ;
         } else if (Objects.equals(Main.MyShips[MyTargetRow][MyTargetColumn], "-")) {
             System.out.println("You Sunk The Enemy Ship!!!");
@@ -60,7 +59,7 @@ public class AttackTheShips {
             System.out.println();
             System.out.printf("Target was %d:%d" , RandomTargetRow , RandomTargetColumn);
         } else if (Objects.equals(Main.MyShips[RandomTargetRow][RandomTargetColumn], "#")) {
-            System.out.println("Game Find Your Ship!!!");
+            System.out.println("Oh No! Game Find Your Ship!!!");
             System.out.println(("Ship Lost..."));
             Main.PlayerShips-- ;
             Main.MyShips[RandomTargetRow][RandomTargetColumn] = "@" ;

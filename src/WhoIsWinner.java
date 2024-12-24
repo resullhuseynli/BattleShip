@@ -5,6 +5,7 @@ public class WhoIsWinner {
             System.out.println("You Lost All Your Ships!!!");
             System.out.println("    ***Game Over...***    ");
         } else if (Main.GameShips==0) {
+            System.out.println();
             System.out.println("You Sunk All Enemy Ships!!!");
             System.out.println("    ***You Won...***    ");
         }

@@ -35,6 +35,9 @@ public class Main {
             System.out.println();
             AttackTheShips.AttackPlayerShips();
             GameOcean.MakeTheOcean();
+            if (Main.GameShips==0) {
+                break ;
+            }
         }
 
         WhoIsWinner.Winner();
