@@ -1,3 +1,11 @@
+/** You will be recreating the game of battleships.
+ *  A player will place 5 of their ships on a 10 by 10 grid.
+ *  The computer player will deploy five ships on the same grid.
+ *  Once the game starts the player and computer take turns,
+ *  trying to sink each other's ships by guessing the coordinates to "attack".
+ *  The game ends when either the player or computer has no ships left.**/
+
+
 import java.util.Scanner;
 
 public class Main {
@@ -21,6 +29,7 @@ public class Main {
         System.out.println();
         System.out.println();
         System.out.println("Your Ships Are |#|");
+
 
         while(PlayerShips>0 && GameShips>0) {
             System.out.println();
