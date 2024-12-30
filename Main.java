@@ -6,6 +6,7 @@
  *  The game ends when either the player or computer has no ships left.**/
 
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Main {
@@ -15,11 +16,18 @@ public class Main {
     protected static int PlayerShips = 5 ;
     protected static int GameShips = 5 ;
     protected static String[][] MyShips = new String[row][column] ;
+
     public static void main (String[] args) {
+        for (int i = 0; i < Main.row; i++) {
+            for (int j = 0; j < Main.column; j++) {
+                Main.MyShips[i][j] = " ";
+            }
+        }
+
         System.out.println();
         System.out.println("***Welcome To The Game***");
 
-        MyOcean.MakeTheOcean();       //Creating an Ocean
+        GameOcean.MakeTheOcean();       //Creating an Ocean
 
         DeployingShips.PlayerShips(); //Deploying The Ships Into The Ocean
 
@@ -31,24 +39,24 @@ public class Main {
         System.out.println("Your Ships Are |#|");
 
 
-        while(PlayerShips>0 && GameShips>0) {
+        while (PlayerShips > 0 && GameShips > 0) {
             System.out.println();
             System.out.println("it is Your Turn...");
             AttackTheShips.AttackGameShips();
-            if (Main.PlayerShips==0) {
+            if (Main.PlayerShips == 0) {
                 GameOcean.MakeTheOcean();
-                break ;
+                break;
             }
             System.out.println();
             System.out.print("It Is The Game Turn...");
             System.out.println();
             AttackTheShips.AttackPlayerShips();
             GameOcean.MakeTheOcean();
-            if (Main.GameShips==0) {
-                break ;
+            if (Main.GameShips == 0) {
+                break;
             }
         }
-
         WhoIsWinner.Winner();
+
     }
 }

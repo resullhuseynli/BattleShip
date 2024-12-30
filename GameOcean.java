@@ -9,9 +9,9 @@ public class GameOcean {
 
         //Making The Middle Of The Ocean
         System.out.println();
-        for (int i=0 ; i< Main.row ; i++) {
+        for (int i = 0; i< Main.row; i++) {
             System.out.print(i+ "|" + " ");
-            for (int j=0 ; j < Main.column ; j++) {
+            for (int j = 0; j < Main.column; j++) {
                 if (!Objects.equals(Main.MyShips[i][j], "-")) {
                     System.out.print(Main.MyShips[i][j] + " ");
                 } else {
